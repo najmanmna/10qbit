@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* 03. DUAL CORE // STUDIO & ADVISORY */}
       <section className="py-40 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-[#8888A0]/20 border border-[#8888A0]/20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-[#0A0A0F]/60 backdrop-blur-xl border border-[#8888A0]/20">
           
           {/* Studio Panel */}
           <motion.div 
@@ -147,7 +147,7 @@ export default function Home() {
       <LatestInsights />
 
       {/* 04. FINAL UPLINK // CTA */}
-      <section className="py-40 px-6 bg-[#0A0A0F]/60 backdrop-blur-xl border-t border-[#E8E8F0]/10 text-center relative z-10">
+      <section className="py-40 px-6 bg-[#0A0A0F]/60 backdrop-blur-xlç border-t border-[#E8E8F0]/10 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
           <motion.div 
             initial="hidden" 
