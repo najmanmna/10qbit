@@ -47,7 +47,7 @@ export default function Home() {
               <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-[#8888A0]">System Status: Optimal</span>
             </div>
 
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] font-mono uppercase italic">
+            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] font-mono uppercase">
               We don’t just <br /> invest in the future. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E8E8F0] via-[#8888A0] to-[#E8E8F0]/50 inline-block font-mono">
                 <ScrambleText text="We engineer it." />
