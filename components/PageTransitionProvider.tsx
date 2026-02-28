@@ -1,19 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react"; // Added Suspense
 import { usePathname, useSearchParams } from "next/navigation";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
-export default function PageTransitionProvider({ children }: { children: React.ReactNode }) {
+// 1. Move the logic into a sub-component
+function TransitionHandler() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Start progress bar on route change
     NProgress.configure({ showSpinner: false, speed: 400 });
-    
-    // In Next.js App Router, the page finishes loading when the pathname changes
     NProgress.done();
     
     return () => {
@@ -21,5 +19,17 @@ export default function PageTransitionProvider({ children }: { children: React.R
     };
   }, [pathname, searchParams]);
 
-  return <>{children}</>;
+  return null; // This component doesn't render anything UI-wise
+}
+
+// 2. Wrap it in Suspense in the main export
+export default function PageTransitionProvider({ children }: { children: React.ReactNode }) {
+  return (
+    <>
+      <Suspense fallback={null}>
+        <TransitionHandler />
+      </Suspense>
+      {children}
+    </>
+  );
 }
